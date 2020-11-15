@@ -1,0 +1,62 @@
+#!/bin/bash
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ];
+then
+    echo ""
+    echo "-d --debug, compila debug"
+    echo "--web, roda pra navegador"
+    echo "(vazio), roda pra desktop"
+    echo ""
+    echo "venosyd ©2020"
+    echo ""
+
+## debug
+elif [ "$1" = "-d" ] || [ "$1" = "--debug" ] || [ "$2" = "-d" ] || [ "$2" = "--debug" ];
+then
+    if [ "$1" = "--web" ] || [ "$2" = "--web" ];
+    then
+        flutter run -d chrome -t lib/main_web_dev.dart
+
+    # desktop
+    else
+        # macos
+        if [[ "$OSTYPE" == "darwin"* ]];
+        then
+            flutter run -d macos -t lib/main_desktop_dev.dart
+        
+        # linux
+        elif [[ "$OSTYPE" == "linux"* ]];
+        then
+            flutter run -d linux -t lib/main_desktop_dev.dart
+        
+        # windows
+        else
+            flutter run -d windows -t lib/main_desktop_dev.dart
+        fi
+    fi
+
+## release
+else
+    if [ "$1" = "--web" ] || [ "$2" = "--web" ];
+    then
+        flutter run -d chrome -t lib/main_web.dart
+
+    # desktop
+    else
+        # macos
+        if [[ "$OSTYPE" == "darwin"* ]];
+        then
+            flutter run -d macos -t lib/main_desktop.dart
+        
+        # linux
+        elif [[ "$OSTYPE" == "linux"* ]];
+        then
+            flutter run -d linux -t lib/main_desktop.dart
+        
+        # windows
+        else
+            flutter run -d windows -t lib/main_desktop.dart
+        fi
+    fi
+fi
+

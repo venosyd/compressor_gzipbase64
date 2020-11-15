@@ -1,0 +1,37 @@
+#!/bin/sh
+
+if [ "$1" = "-h" ] || [ "$1" = "--help" ];
+then
+    echo ""
+    echo "-a --all, todos"
+    echo "-m --mac, compilar pra macos"
+    echo "-l --linux, compilar pra linux"
+    echo "(vazio), compilar pra windows"
+    echo ""
+    echo "venosyd ©2020"
+    echo ""
+    
+## buildar todos
+elif [ "$1" = "-a" ] || [ "$1" = "--all" ];
+then
+    ./compile-desktop -m; # buildar pra mac
+    ./compile-desktop -l; # buildar pra linux
+    ./compile-desktop; # buildar pra windows
+
+## compilacao especifica
+else
+    ## macOS
+    if [ "$1" = "-m" ] || [ "$1" = "--mac" ];
+    then
+        flutter build macos --target="lib/main_desktop.dart" -v
+
+    ## Linux
+    elif [ "$1" = "-l" ] || [ "$1" = "--linux" ];
+    then
+        flutter build linux --target="lib/main_desktop.dart" -v
+
+    ## Windows
+    else
+        flutter build windows --target="lib/main_desktop.dart" -v
+    fi
+fi
