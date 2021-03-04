@@ -2,10 +2,10 @@ name: compressor_imagem
 description: A new Flutter project.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
   archive:
@@ -13,6 +13,8 @@ dependencies:
   file_picker_cross:
   flutter:
     sdk: flutter
+  opensyd_flutter:
+    git: https://github.com/venosyd/opensyd_flutter
 
 flutter:
   uses-material-design: true

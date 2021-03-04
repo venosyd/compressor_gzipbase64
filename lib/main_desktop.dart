@@ -10,6 +10,7 @@ import 'package:archive/archive.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:file_picker_cross/file_picker_cross.dart';
 import 'package:flutter/material.dart';
+import 'package:opensyd_flutter/opensyd_flutter.dart';
 
 ///
 void main() {
@@ -96,16 +97,11 @@ class _CompressorAppState extends State<CompressorApp> {
                             width: 196,
                             height: 48,
                             margin: const EdgeInsets.only(top: 32),
-                            child: FlatButton(
-                              onPressed: _upload,
-                              color: const Color(0xFF64B5F6),
-                              child: const Text(
-                                'SUBIR A IMAGEM',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
+                            child: OpenSyButton(
+                              action: _upload,
+                              background: const Color(0xFF64B5F6),
+                              foreground: Colors.white,
+                              text: 'SUBIR A IMAGEM',
                             ),
                           ),
                         ],
