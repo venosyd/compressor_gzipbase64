@@ -8,7 +8,7 @@ then
     echo "-l --linux, compilar pra linux"
     echo "(vazio), compilar pra windows"
     echo ""
-    echo "venosyd ©2020"
+    echo "venosyd © 2021"
     echo ""
     
 ## buildar todos

@@ -7,7 +7,7 @@ then
     echo "--web, roda pra navegador"
     echo "(vazio), roda pra desktop"
     echo ""
-    echo "venosyd ©2020"
+    echo "venosyd © 2021"
     echo ""
 
 ## debug
